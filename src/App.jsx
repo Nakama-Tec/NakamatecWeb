@@ -5,6 +5,8 @@ import './App.css'
 import MainHome from './Components/MainHome'
 import Services from './Components/Services'
 import Work from './Components/Work'
+import Shape from './Components/Layouts/Shape'
+import Swapy from './Components/Swapy'
 
 function App() {
 
@@ -16,9 +18,11 @@ function App() {
         <div>
           <MainHome/>
           <Services/>
-          <Work />  
         </div>
      </Container>
+          <Shape />
+          <Work />
+          <Swapy />
     </>
   )
 }
