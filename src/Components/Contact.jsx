@@ -17,7 +17,7 @@ const Contact = () => {
                 </p>
                 <div className="flex justify-center">
                     <motion.a
-                        href="/formulario"
+                        href="/contact"
                         className="bg-[#095ba4] text-white font-semibold py-2 px-4 rounded hover:bg-[#074a8a] transition duration-300"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}

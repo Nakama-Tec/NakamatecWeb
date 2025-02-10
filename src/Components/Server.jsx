@@ -30,7 +30,7 @@ return (
                     <i className="c1">import</i> os, sys
                     <br />
                     <b className="c2">os</b>.system<b className="c3">(</b>
-                    <b className="c4">&quot;Tu software nuevo&quot;</b>
+                    <b className="c4">&quot;Tu nuevo Software&quot;</b>
                     <b className="c3">)</b>
                     <br />
                     <b className="c2">print</b>
