@@ -1,3 +1,15 @@
+import React from 'react'
+
+const Form = () => {
+  return (
+    <div>
+      Formulario de contacto
+    </div>
+  )
+}
+
+export default Form
+
 // import { useRef } from "react";
 // import { useForm } from "react-hook-form";
 // import { zodResolver } from "@hookform/resolvers/zod";
