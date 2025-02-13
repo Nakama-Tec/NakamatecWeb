@@ -9,8 +9,8 @@ const createContacts =(req,res)=>{
    
     // Configura el contenido del correo
     let mailOptions = {
-        from: "matias_seb_chocobar@hotmail.com",
-        to: "chocobar_matias@yahoo.com.ar",
+        from: "correo de donve vino el mail",// aqui va el correo del que envia el mensaje osea en mail figura correo nakama
+        to: "correo que envia el mail",//aqui va el correo al que se enviara el mensaje osea en mail figura correo nakama
         subject: ` Nuevo mensaje de ${Nombre}`,
         text: `
             Nombre: ${Nombre}
