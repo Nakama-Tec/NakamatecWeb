@@ -3,24 +3,21 @@ import { transporter } from "../DB/configDB.js";
 
 //esta funcion crear/inserta en la base de datos y envia el mail con el contenido
 const createContacts =(req,res)=>{
-    const {Nombre,Email,Motivo,Comentario} = req.body
+    const { nombre, email, pais, telefono, empresa, asunto, mensaje } = req.body
     
    
    
     // Configura el contenido del correo
     let mailOptions = {
-        from: "correo de donve vino el mail",// aqui va el correo del que envia el mensaje osea en mail figura correo nakama
-        to: "correo que envia el mail",//aqui va el correo al que se enviara el mensaje osea en mail figura correo nakama
-        subject: ` Nuevo mensaje de ${Nombre}`,
-        text: `
-            Nombre: ${Nombre}
-
-            Email: ${Email}
-
-            Motivo: ${Motivo}
-            
-            Comentario: ${Comentario}
-        `
+        from: email,// aqui va el correo del que envia el mensaje osea en mail figura correo nakama
+        to: "info.nakamatec@gmail.com",//aqui va el correo al que se enviara el mensaje osea en mail figura correo nakama
+        subject: asunto || ` Nuevo mensaje de ${nombre}`,
+        text:`Nombre: ${nombre}
+              Correo: ${email}
+              País: ${pais}
+              Teléfono: ${telefono || "No proporcionado"}
+              Empresa: ${empresa || "No proporcionado"}
+              Mensaje: ${mensaje}`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

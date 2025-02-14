@@ -5,10 +5,10 @@ dotenv.config();
 
 // Configura el transporte de Nodemailer
 let transporter = nodemailer.createTransport({
-    service: "servidro de correo ejemplo gmail o hotmail",
+    service: "gmail",
     auth: {
-        user: "el correo que envia el mensaje",
-        pass: "contraseña del correo"
+        user: "info.nakamatec@gmail.com",
+        pass: "Nakamatec05_"
     }
 });
 
