@@ -3,10 +3,10 @@ import { createSwapy, utils } from "swapy";
 
 const Swapy = () => {
     const [cards, setCards] = useState([
-        { tarjetaId: 1, title: "Descubrimiento 🔎", number: 1 },
-        { tarjetaId: 2, title: "Planificación 📋", number: 2 },
-        { tarjetaId: 3, title: "Desarrollo 🔧", number: 3 },
-        { tarjetaId: 4, title: "Lanzamiento 📈", number: 4 },
+        { tarjetaId: 1, title: "Descubrimiento 🔎", description: 'Analizamos tus necesidades y objetivos para definir el mejor enfoque. Investigamos el mercado y recopilamos información clave para garantizar el éxito del proyecto.', number: 1 },
+        { tarjetaId: 2, title: "Planificación 📋", description: 'Diseñamos una estrategia clara y estructurada, estableciendo tiempos, recursos y tecnologías para optimizar cada fase del desarrollo.', number: 2 },
+        { tarjetaId: 3, title: "Desarrollo 🔧", description: 'Transformamos la planificación en realidad. Construimos, probamos y refinamos el producto con metodologías ágiles para asegurar eficiencia y calidad.', number: 3 },
+        { tarjetaId: 4, title: "Lanzamiento 📈", description: 'Implementamos y desplegamos la solución final, asegurando un proceso fluido. Brindamos soporte para optimizar la experiencia del usuario y garantizar el éxito.', number: 4 },
         // Agrega más tarjetas según sea necesario
     ]);
     const [slotItemMap, setSlotItemMap] = useState(utils.initSlotItemMap(cards, 'tarjetaId'));
@@ -54,7 +54,8 @@ const Swapy = () => {
                             <div className="number bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mb-2">
                                 {card.number}
                             </div>
-                            <span className="text-lg font-semibold">{card.title}</span>
+                            <span className="text-lg font-semibold text-center mb-2">{card.title}</span>
+                            <span className="text-gray-500 text-sm text-center">{card.description}</span>
                         </div>
                     </div>
                 ))}

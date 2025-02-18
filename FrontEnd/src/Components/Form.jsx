@@ -4,7 +4,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import emailjs from "emailjs-com";
+import axios from "axios";
+import { URL_FORM } from "../endpoints/endpoints";
+// import emailjs from "emailjs-com";
 
 const schema = z.object({
   nombre: z.string().min(1, "El nombre es requerido"),
@@ -28,23 +30,24 @@ export default function ContactForm() {
   const navigate = useNavigate();
   const form = useRef();
 
-  const onSubmit = () => {
-    emailjs.sendForm('service_sy5qmuk', 'template_ir2oaae', form.current, 'DLLW9yosrjIB9j2pp')
-      .then(() => {
-        Swal.fire({
-          icon: 'success',
-          title: 'Enviado',
-          text: 'Tu mensaje ha sido enviado exitosamente!',
-        });
-        navigate('/');
-      })
-      .catch(() => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
-        });
+  const onSubmit = async(data) => {
+    try {
+      await axios.post(URL_FORM, data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Enviado',
+        text: 'Tu mensaje ha sido enviado exitosamente!',
       });
+      navigate('/');
+    
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+      });
+    }
   };
 
   return (

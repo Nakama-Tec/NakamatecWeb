@@ -25,7 +25,7 @@ const Valores = () => {
 
   return (
     <div>
-      <h3 className="flex justify-center text-2xl font-[Public-Sans] md:text-4xl lg:text-6xl font-bold text-[#00275c] mb-2 md:mb-4 md:mr-4 m-5">
+      <h3 className="flex justify-center text-3xl font-[Public-Sans] md:text-4xl lg:text-6xl font-bold text-[#00275c] mb-2 md:mb-4 md:mr-4 m-5">
         Nuestros <span className="text-[#095ba4] relative left-2 md:left-4"> valores</span>
       </h3>
       <div className="flex flex-wrap justify-center gap-6 m-6">
@@ -38,10 +38,10 @@ const Valores = () => {
           >
             <div className="flex items-center gap-3">
               <img src={item.image} alt={item.title} className="w-12 h-12 object-cover rounded-md" />
-              <h3 className="text-white text-[20px] md:text-[24px] font-semibold">{item.title}</h3>
+              <h3 className="text-white text-[22px] md:text-[24px] font-semibold">{item.title}</h3>
             </div>
-            <p className="text-[hsla(0,0%,100%,0.6)] text-[16px] md:text-[18px] leading-[20px] mt-2">{item.shortDescription}</p>
-            <p className="text-white text-[14px] md:text-[16px] leading-[20px] mt-2">{item.longDescription}</p>
+            <p className="text-[hsla(0,0%,100%,0.6)] text-[18px] md:text-[18px] leading-[20px] mt-2">{item.shortDescription}</p>
+            <p className="text-white text-[16px] md:text-[16px] leading-[20px] mt-2">{item.longDescription}</p>
           </motion.div>
         ))}
       </div>

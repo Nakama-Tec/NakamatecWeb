@@ -1,4 +1,7 @@
 import { transporter } from "../DB/configDB.js";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 //esta funcion crear/inserta en la base de datos y envia el mail con el contenido
@@ -10,7 +13,7 @@ const createContacts =(req,res)=>{
     // Configura el contenido del correo
     let mailOptions = {
         from: email,// aqui va el correo del que envia el mensaje osea en mail figura correo nakama
-        to: "info.nakamatec@gmail.com",//aqui va el correo al que se enviara el mensaje osea en mail figura correo nakama
+        to: process.env.EMAIL_USER,//aqui va el correo al que se enviara el mensaje osea en mail figura correo nakama
         subject: asunto || ` Nuevo mensaje de ${nombre}`,
         text:`Nombre: ${nombre}
               Correo: ${email}
