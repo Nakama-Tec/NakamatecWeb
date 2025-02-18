@@ -1,20 +1,8 @@
-// import React from 'react'
-
-// const Form = () => {
-//   return (
-//     <div>
-//       Formulario de contacto
-//     </div>
-//   )
-// }
-
-// export default Form
-
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 
@@ -37,6 +25,7 @@ export default function ContactForm() {
     resolver: zodResolver(schema),
   });
 
+  const navigate = useNavigate();
   const form = useRef();
 
   const onSubmit = () => {
@@ -47,6 +36,7 @@ export default function ContactForm() {
           title: 'Enviado',
           text: 'Tu mensaje ha sido enviado exitosamente!',
         });
+        navigate('/');
       })
       .catch(() => {
         Swal.fire({
