@@ -1,0 +1,1 @@
+export const URL_FORM = "http://localhost:8000/contactame/create/";
