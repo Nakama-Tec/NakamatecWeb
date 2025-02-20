@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
+    <div className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-3xl bg-gray-800 p-8 rounded-lg shadow-lg text-white">
         <h2 className="text-3xl font-bold text-white">Contacto</h2>
         <p className="text-gray-400 mb-6">Por favor envíanos tus comentarios, en breve nos contactaremos.</p>
