@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { URL_FORM } from "../endpoints/endpoints";
@@ -27,27 +27,27 @@ export default function ContactForm() {
     resolver: zodResolver(schema),
   });
 
+  const navigate = useNavigate();
   const form = useRef();
 
   const onSubmit = async(data) => {
-    try{
-
+    try {
       await axios.post(URL_FORM, data);
-
-        Swal.fire({
-          icon: 'success',
-          title: 'Enviado',
-          text: 'Tu mensaje ha sido enviado exitosamente!',
-        });
-      
-      }catch(error) {
-        console.error("Error al enviar el formulario:", error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
-        });
-      };
+      Swal.fire({
+        icon: 'success',
+        title: 'Enviado',
+        text: 'Tu mensaje ha sido enviado exitosamente!',
+      });
+      navigate('/');
+    
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.',
+      });
+    }
   };
 
   return (
