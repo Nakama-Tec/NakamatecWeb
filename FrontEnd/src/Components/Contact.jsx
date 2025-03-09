@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { CONTACT } from '../router/router';
 import { Link } from 'react-router-dom';
 
+
 const Contact = () => {
     return (
         <div className="flex flex-col items-center justify-center py-8 px-4">
