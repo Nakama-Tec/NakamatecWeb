@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { CONTACT } from '../router/router';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
@@ -16,14 +18,14 @@ const Contact = () => {
                     Estamos ansiosos por colaborar contigo. Haz clic en el botón de abajo para llenar el formulario y dar el primer paso hacia una asociación exitosa.
                 </p>
                 <div className="flex justify-center">
-                    <motion.a
-                        href="/contact"
-                        className="bg-[#095ba4] text-white font-semibold py-2 px-4 rounded hover:bg-[#074a8a] transition duration-300"
+                    <Link
+                         to={CONTACT}
+                        className="bg-[#095ca4] border-2 border-blue-600 rounded-full text-white p-2 px-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#095ca4] cursor-pointer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
                         Contactanos
-                    </motion.a>
+                    </Link>
                 </div>
             </motion.div>
         </div>
