@@ -1,41 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { createSwapy, utils } from "swapy";
+import {  useRef, useState } from "react";
+
 
 const Swapy = () => {
-    const [cards, setCards] = useState([
+    const [cards] = useState([
         { tarjetaId: 1, title: "Descubrimiento 🔎", description: 'Analizamos tus necesidades y objetivos para definir el mejor enfoque. Investigamos el mercado y recopilamos información clave para garantizar el éxito del proyecto.', number: 1 },
         { tarjetaId: 2, title: "Planificación 📋", description: 'Diseñamos una estrategia clara y estructurada, estableciendo tiempos, recursos y tecnologías para optimizar cada fase del desarrollo.', number: 2 },
         { tarjetaId: 3, title: "Desarrollo 🔧", description: 'Transformamos la planificación en realidad. Construimos, probamos y refinamos el producto con metodologías ágiles para asegurar eficiencia y calidad.', number: 3 },
         { tarjetaId: 4, title: "Lanzamiento 📈", description: 'Implementamos y desplegamos la solución final, asegurando un proceso fluido. Brindamos soporte para optimizar la experiencia del usuario y garantizar el éxito.', number: 4 },
         // Agrega más tarjetas según sea necesario
     ]);
-    const [slotItemMap, setSlotItemMap] = useState(utils.initSlotItemMap(cards, 'tarjetaId'));
+    
     const containerRef = useRef(null);
-    const swapyRef = useRef(null);
 
-    useEffect(() => {
-        if (containerRef.current) {
-            swapyRef.current = createSwapy(containerRef.current, {
-                onDrop: (source, target) => {
-                    const sourceId = source.dataset.swapyItem;
-                    const targetId = target.dataset.swapyItem;
-                    const sourceIndex = cards.findIndex(card => card.tarjetaId === parseInt(sourceId));
-                    const targetIndex = cards.findIndex(card => card.tarjetaId === parseInt(targetId));
-                    const updatedCards = [...cards];
-                    const [movedCards] = updatedCards.splice(sourceIndex, 1);
-                    updatedCards.splice(targetIndex, 0, movedCards);
-                    setCards(updatedCards);
-                }
-            });
-        }
-    }, [cards]);
 
-    useEffect(() => {
-        const newSlotItemMap = utils.initSlotItemMap(cards, 'tarjetaId');
-        if (JSON.stringify(newSlotItemMap) !== JSON.stringify(slotItemMap)) {
-            setSlotItemMap(newSlotItemMap);
-        }
-    }, [cards, slotItemMap]);
+    
 
     return (
         <div ref={containerRef} className="p-4">
