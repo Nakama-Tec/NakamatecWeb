@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { createSwapy, utils } from "swapy";
+import {  useRef, useState } from "react";
+
 
 const Swapy = () => {
     const [cards] = useState([
