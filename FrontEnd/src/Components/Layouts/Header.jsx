@@ -1,5 +1,6 @@
 import LogoNakama from '../../assets/Logo.jpg'
 import {Link} from 'react-router-dom'
+import { CONTACT } from '../../router/router'
 
 const Header = () => {
     return (
@@ -16,7 +17,7 @@ const Header = () => {
                 </div>
 
                 {/* Botón de contacto */}
-                <Link to="/contact" className="bg-[#095ca4] border-2 border-blue-600 rounded-full text-white p-2 px-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#095ca4] cursor-pointer">
+                <Link to={CONTACT} className="bg-[#095ca4] border-2 border-blue-600 rounded-full text-white p-2 px-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#095ca4] cursor-pointer">
                     Contactanos
                 </Link>
             </div>

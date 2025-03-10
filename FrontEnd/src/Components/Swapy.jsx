@@ -9,11 +9,11 @@ const Swapy = () => {
         { tarjetaId: 4, title: "Lanzamiento 📈", description: 'Implementamos y desplegamos la solución final, asegurando un proceso fluido. Brindamos soporte para optimizar la experiencia del usuario y garantizar el éxito.', number: 4 },
         // Agrega más tarjetas según sea necesario
     ]);
-   
+    
     const containerRef = useRef(null);
-   
 
-   
+
+    
 
     return (
         <div ref={containerRef} className="p-4">
