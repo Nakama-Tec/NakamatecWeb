@@ -13,6 +13,8 @@
 }
 
 .titulo {
+    margin-top: 35px;
+    margin-bottom: 30px;
     grid-area: titulo;
     font-size: 2em;
     text-align: center;
