@@ -1,0 +1,87 @@
+
+.container {
+    width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    display: grid;
+    grid-template-areas: 
+        "titulo titulo"
+        "bannerimg texto";
+    grid-template-columns: 2fr 2fr; /* 75% para la imagen y 25% para el texto */
+    gap: 20px;
+    height: 100%; /* Asegurar que ocupe toda la altura disponible */ 
+ 
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+
+.titulo {
+    grid-area: titulo;
+    font-size: 2em;
+    text-align: center;
+    align-self: center; /* Centrar verticalmente */
+}
+
+.containerTexto{
+    width: 100%;
+    grid-area: texto;
+    font-size: 1.3em; /* Aumentamos el tamaño de la letra */
+    background: #f8f9fa; /* Un fondo más elegante y sutil */
+    padding: 20px; /* Más espacio alrededor del texto */
+    border-left: 5px solid #0651f3; /* Un detalle visual atractivo */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar */
+    font-weight: 500; /* Hacer la fuente un poco más gruesa */
+    line-height: 1.6; /* Mayor espacio entre líneas */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    color: #333; /* Color más oscuro para mejor contraste */
+}
+
+.texto  {
+   
+}
+
+.bannerimg {
+    grid-area: bannerimg;
+}
+
+.bannerimg img {
+    width: 100%;
+    height: auto;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%); /* Ajuste para un paralelogramo más extendido */
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "titulo"
+            "bannerimg"
+            "texto";
+        grid-template-columns: 1fr;
+    }
+
+    .texto {
+        display: block;
+        text-align: left;
+    }
+}
+
+.titulo h1 {
+    font-size: 2rem; /* Equivalente a text-3xl */
+}
+
+@media (min-width: 640px) { /* sm: breakpoint en Tailwind */
+    .titulo h1 {
+        font-size: 3rem; /* Equivalente a text-5xl */
+    }
+}
+
+.titulo h1 {
+    font-weight: bold;
+    font-family: 'Public Sans';
+}
+
+.color1 {
+    color: #00275c; /* Azul oscuro */
+}
+
+.color2 {
+    color: #095ba4; /* Azul más claro */
+}
+

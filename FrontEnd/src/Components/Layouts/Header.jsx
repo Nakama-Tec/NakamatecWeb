@@ -1,14 +1,14 @@
 import LogoNakama from '../../assets/Logo.jpg'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { CONTACT } from '../../router/router'
 
 const Header = () => {
     return (
         <header>
-            <div className='flex flex-col md:flex-row justify-evenly items-center bg-white font-semibold p-4'>
+            <div className='flex justify-between items-center bg-white font-semibold p-4'>
                 
                 {/* Contenedor del logo y el nombre */}
-                <div className="flex items-center gap-2 mb-4 md:mb-0">
+                <div className="flex justify-center items-center gap-2">
                     <img src={LogoNakama} alt="Logo Nakama" className='h-16 md:h-20' />
                     <div>
                         <p className='text-2xl md:text-4xl text-[#095ba4] leading-none'>Nakama<span className="font-bold">Tec</span></p>
